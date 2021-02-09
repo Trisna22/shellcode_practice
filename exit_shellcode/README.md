@@ -51,8 +51,10 @@ Disassembly of section .text:
 To try the exit shellcode, we need to code a C program that  
 executes our shellcode.  
   
-test.c
+excecutor.c
 ```C++
+// Compile with command:
+// gcc -o excecutor excecutor.c -z execstack -m32
 char shellcode[] = "\xbb\x00\x00\x00\x00"
 		   "\xb8\x01\x00\x00\x00"
 		   "\xcd\x80";
@@ -64,7 +66,8 @@ int main() {
 	(*ret) = (int)shellcode;
 }
 ```
-The problem is, that this code contains zero's, and in a buffer it gets strings terminated.  
+
+The problem is, that this code contains zero's, and in a buffer it gets string terminated.  
 
 Using "xor ebx,ebx" to make sure that ebx is zero, because  
   
