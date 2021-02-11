@@ -39,5 +39,7 @@ fill:
 	xor edx, edx		; zero out edx
 
 	; we need to find a way to store 512 without a zero.
-	mov dx, 512
+	inc edx
+	shl edx, 9
+
 	int 0x80
