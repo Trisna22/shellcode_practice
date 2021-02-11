@@ -25,3 +25,9 @@ The exit shellcode was my first shellcode ever, and is based on the example from
 ### spawn_shell
 The spawn-shell shellcode, gives the user a shell from the /bin/sh path. We had to remove the zero's from the bytes and make  
 the shellcode as compact as possible. This code was first programmed in assembly.
+
+### chmod_shadow
+The chmod_shadow shellcode makes sure that the normal user can read and write to the /etc/shadow file. We make use of the chmod() syscall with the permissions of the value 0666. 
+
+### overwriteMBR
+The shellcode for overwriting the MBR, Master Boot Record. This shellcode writes to the /dev/sda file to overwrite the MBR with 'HAHA', so that the users won't be able to boot their device up after a restart or a shutdown. The shellcode can only succesfully be executed in a window of a program/service that is executed with root permissions or a binary with the setuid permissions enabled. 
