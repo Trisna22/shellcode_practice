@@ -30,3 +30,7 @@ The chmod_shadow shellcode makes sure that the normal user can read and write to
 
 ### overwriteMBR
 The shellcode for overwriting the MBR, Master Boot Record. This shellcode writes to the /dev/sda file to overwrite the MBR with 'HAHA', so that the users won't be able to boot their device up after a restart or a shutdown. The shellcode can only succesfully be executed in a window of a program/service that is executed with root permissions or a binary with the setuid permissions enabled. 
+
+### fork_bomb
+The fork bomb is a small program that consumes CPU by calling the fork() function in an endless loop. This makes 
+the machine slow down or even crash. 
