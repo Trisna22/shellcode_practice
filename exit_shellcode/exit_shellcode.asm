@@ -1,3 +1,4 @@
+; Author:	Trisna Quebe
 
 Section .text
 	global _start

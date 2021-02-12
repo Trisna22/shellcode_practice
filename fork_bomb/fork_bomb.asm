@@ -1,3 +1,5 @@
+
+; Author:	Trisna Quebe
 SYS_FORK equ		0x2
 
 global _start
