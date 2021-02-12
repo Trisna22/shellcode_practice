@@ -5,7 +5,8 @@ global _start
 section .text
 
 _start:
-
 	; fork(void);
+	pop eax
 	mov al, SYS_FORK
 	int 0x80
+	jmp _start
