@@ -6,7 +6,7 @@ section .text
 
 _start:
 	; fork(void);
-	pop eax
+	xor eax, eax
 	mov al, SYS_FORK
 	int 0x80
 	jmp _start
