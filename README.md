@@ -34,3 +34,14 @@ The shellcode for overwriting the MBR, Master Boot Record. This shellcode writes
 ### fork_bomb
 The fork bomb is a small program that consumes CPU by calling the fork() function in an endless loop. This makes 
 the machine slow down or even crash. 
+
+## Notes
+When working on this project, I noticed that we can't create shellcode that works on every system. This is because not all shellcode can be understood on every 
+system or program. Some systems use different opcodes or instructions, some programs have different memory mappings so that we have to adjust the shellcode in
+order to make it work. Before we want to exploit a system or craft shellcode, 
+we need to asks some questions first. What operating system is the machine running? Is it 32 or 64 bit? What software do you want to exploit?
+  
+These are crucial questions we have to ask ourselves, before we can craft and use shellcode. Throwing shellcode or exploits on systems we don't have information about will mostly fail, because we don't know if the shellcode or the exploit even works on the target computer it is developed for.  
+
+The best thing to do is, if you want to exploit a system, you should gather information about the system and create shellcode or exploits based on that and not 
+on assumptions or already made shellcode/exploits. This project is good for practicing shellcode crafting and not for using them on arbitrary systems.
